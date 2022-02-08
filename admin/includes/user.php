@@ -72,11 +72,11 @@ public static function verify_user($username,$password){
     
   global $database;   
     
-    $username = $database->escape_string($username);
-    $password = $database->escape_string($password);  
+$username = $database->escape_string($username);
+ $password = $database->escape_string($password);  
     
   
-    $sql ="SELECT * users WHERE username = '{$username}' AND password = '{$password}' ";
+    $sql ="SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}' ";
     
     
     
