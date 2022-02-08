@@ -1,4 +1,4 @@
-<?php require_once("includes/init.php"); ?>
+<?php require_once("includes/header.php"); ?>
 
 
 <?php 
@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
     
     
     
-    $user_found = User::verify_user($username,$password);
+    $user_found = User::verify_user($username, $password);
     
     
     
