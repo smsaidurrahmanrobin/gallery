@@ -32,6 +32,9 @@ public function query($sql){
     
     
     return $result;
+  
+    confirm_query($result);
+    
     
 } 
     

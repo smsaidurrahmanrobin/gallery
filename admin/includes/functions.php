@@ -26,7 +26,13 @@ function meu_autoloader($class){
     
 }
           
-
+function redirect($location){
+    
+    
+    header("Location: {$location}");
+    
+    
+}
 
 
 ?>
