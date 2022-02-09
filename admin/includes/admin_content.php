@@ -20,10 +20,14 @@
                         
 
                         
-$user = User::find_user_by_id(2); 
-$user->username = "RICO";
-$user->first_name = "SUAVEZ";
-$user->update();                        
+//$user = User::find_user_by_id(2); 
+//$user->username = "RICO";
+//$user->first_name = "SUAVEZ";
+//$user->update(); 
+
+$user = User::find_user_by_id(26); 
+
+$user->delete();                         
     
 
 
