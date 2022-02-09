@@ -25,10 +25,20 @@
 //$user->first_name = "SUAVEZ";
 //$user->update(); 
 
-$user = User::find_user_by_id(26); 
-
-$user->delete();                         
+//$user = User::find_user_by_id(26); 
+//
+//$user->delete();
+                        
+$user = User::find_user_by_id(28); 
+$user->username = "TESTRATE QUADRATE";
     
+$user->save();                        
+                        
+                        
+//$user = new User; 
+//$user->username = "LIONESTRATE";
+//    
+//$user->save();                           
 
 
 

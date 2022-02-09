@@ -2,7 +2,7 @@
 
 class User{
     
-
+protected static $db_table = "users";
 public $id;
 public $username;
 public $password;
@@ -125,6 +125,17 @@ private function has_the_attribute($attribute){
  return array_key_exists($attribute, $object_properties);   
     
 } 
+    
+ 
+public function save(){
+    
+    
+return isset($this->id) ? $this->update() : $this->create();    
+    
+    
+    
+}    
+    
     
     
 public function create(){
