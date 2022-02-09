@@ -63,11 +63,12 @@ public function the_insert_id(){
     return mysqli_insert_id($this->connection);
     
     
-}    
+}   
+    
+
     
     
-    
-}
+} //End of class Database
 
 $database = new Database();
 
