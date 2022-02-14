@@ -29,10 +29,10 @@
 //
 //$user->delete();
                         
-$user = User::find_user_by_id(28); 
-$user->username = "TESTRATE QUADRATE";
-    
-$user->save();                        
+//$user = User::find_by_id(28); 
+//$user->username = "TESTRATE QUADRATE";
+//    
+//$user->save();                        
                         
                         
 //$user = new User; 
