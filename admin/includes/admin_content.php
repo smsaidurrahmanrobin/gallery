@@ -25,7 +25,7 @@
 //$user->first_name = "SUAVEZ";
 //$user->update(); 
 
-//$user = User::find_user_by_id(26); 
+//$user = User::find_by_id(33); 
 //
 //$user->delete();
                         
@@ -34,9 +34,9 @@
 //    
 //$user->save();                        
                         
-//                        
+                        
 //$user = new User; 
-//$user->username = "ami user new user";
+//$user->username = "teswting user";
 //    
 //$user->save();                           
 
@@ -48,12 +48,12 @@
                         
                         
                         
-$photo = new Photo();
-$photo->title = "rahman";
-$photo->size = "10";
-
-$photo->create();                        
-                                          
+//$photo = new Photo();
+//$photo->title = "rahman";
+//$photo->size = "10";
+//
+//$photo->create();                        
+//                                          
     
 
 

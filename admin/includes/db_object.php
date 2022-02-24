@@ -107,12 +107,10 @@ public function create(){
     
     global $database;
     
-    $sql = "INSERT INTO users (username, password, first_name, last_name)";
-    $sql .= "VALUES ('";
-    $sql .= $database->escape_string($this->username) . "','";
-    $sql .= $database->escape_string($this->password) . "', '";
-    $sql .= $database->escape_string($this->first_name) . "', '";
-    $sql .= $database->escape_string($this->last_name) . "')";
+    $properties = $this->properties();
+    
+    $sql = "INSERT INTO " .static::$db_table. "(" . implode(",", array_keys($properties)) . ")";
+    $sql .= "VALUES ('" . implode("','", array_values($properties))  ."')";
     
     if($database->query($sql)){
         
@@ -134,7 +132,7 @@ public function create(){
      
 global $database;     
  
-$sql = "UPDATE users SET ";
+$sql = "UPDATE ".static::$db_table." SET ";
 $sql .= "username= '" . $database->escape_string($this->username) . "', ";
 $sql .= "password= '" . $database->escape_string($this->password) . "', ";
 $sql .= "first_name= '" . $database->escape_string($this->first_name) . "', ";
@@ -154,7 +152,7 @@ $sql .= " WHERE id= " . $database->escape_string($this->id);
      
 global $database;     
  
-$sql = "DELETE FROM users ";
+$sql = "DELETE FROM ".static::$db_table." ";
 $sql .= " WHERE id= " . $database->escape_string($this->id);     
 $sql .= " LIMIT 1";     
      
