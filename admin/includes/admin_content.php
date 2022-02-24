@@ -34,12 +34,27 @@
 //    
 //$user->save();                        
                         
-                        
+//                        
 //$user = new User; 
-//$user->username = "LIONESTRATE";
+//$user->username = "ami user new user";
 //    
 //$user->save();                           
 
+//$photo = Photo::find_all(); 
+//foreach ($photos as $photo){
+//   
+//    echo $photo->title;
+//
+                        
+                        
+                        
+$photo = new Photo();
+$photo->title = "rahman";
+$photo->size = "10";
+
+$photo->create();                        
+                                          
+    
 
 
 ?>
