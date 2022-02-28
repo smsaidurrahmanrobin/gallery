@@ -11,18 +11,27 @@
 <?php 
 
 //$user = new User();
-//$user->username = "rahman";
-//$user->password = "rico";
-//$user->first_name = "John";
-//$user->last_name = "Doe";
+//$user->username = "student";
+//$user->password = "123";
+//$user->first_name = "raju";
+//$user->last_name = "student";
 //
-//$user->create();                        
+//$user->create();
                         
+//$photo = new Photo();
+//$photo->title = "image";
+//$photo->description = "test photo";
+//$photo->type = "jpg";
+//$photo->size = "10";
+//
+//$photo->create();                        
+//                        
 
                         
-//$user = User::find_user_by_id(2); 
-//$user->username = "RICO";
-//$user->first_name = "SUAVEZ";
+//$user = User::find_by_id(34); 
+//$user->username = "hs";
+//$user->first_name = "sss";
+//$user->last_name = "sr";
 //$user->update(); 
 
 //$user = User::find_by_id(33); 
