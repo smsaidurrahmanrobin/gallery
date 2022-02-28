@@ -19,9 +19,7 @@
 //$user->create();
                         
 //$photo = new Photo();
-//$photo->title = "image";
-//$photo->description = "test photo";
-//$photo->type = "jpg";
+//$photo->title = "image2";
 //$photo->size = "10";
 //
 //$photo->create();                        
@@ -49,11 +47,13 @@
 //    
 //$user->save();                           
 
-//$photo = Photo::find_all(); 
+//$photos = Photo::find_all(); 
 //foreach ($photos as $photo){
 //   
 //    echo $photo->title;
 //
+//}
+
                         
                         
                         
@@ -64,7 +64,7 @@
 //$photo->create();                        
 //                                          
     
-
+echo INCLUDES_PATH;
 
 ?>
                         

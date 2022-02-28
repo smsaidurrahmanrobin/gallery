@@ -26,7 +26,7 @@ public static function verify_user($username,$password){
     $password = $database->escape_string($password);  
 
   
-    $sql ="SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}' ";
+    $sql ="SELECT * FROM " .static::$db_table. " WHERE username = '{$username}' AND password = '{$password}' ";
     
     
     

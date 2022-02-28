@@ -6,7 +6,7 @@ class Db_object {
     
 public static function find_all(){
     
-return static::find_this_query("SELECT * FROM users");   
+return static::find_this_query("SELECT * FROM " .static::$db_table. "");   
     
     
     }
@@ -15,7 +15,7 @@ public static function find_by_id($user_id){
     
 global $database;
     
-$the_result_array = static::find_this_query("SELECT * FROM users WHERE id = $user_id");
+$the_result_array = static::find_this_query("SELECT * FROM " .static::$db_table. " WHERE id = $user_id");
 
 return !empty($the_result_array) ? array_shift($the_result_array): false;
     
@@ -48,26 +48,19 @@ return $the_object_array;
 } 
     
     
-public static function instantation($found_user){
+public static function instantation($the_record){
 
-   $calling_class = get_called_class();
+ 
     
-    $the_object = new $calling_class;
+    $the_object = new static;
+ 
+   
     
+foreach($the_record as $the_attribute => $value){
     
-   $the_object->id             = $found_user['id'];
-   $the_object->password       = $found_user['password'];
-   $the_object->first_name     = $found_user['first_name'];
-   $the_object->last_name      = $found_user['last_name'];
-   $the_object->username       = $found_user['username'];
-                        
-    
-    
-foreach($found_user as $attribute => $value){
-    
- if($the_object->has_the_attribute($attribute)){
+ if($the_object->has_the_attribute($the_attribute)){
      
-     $the_object->$attribute = $value;
+     $the_object->$the_attribute = $value;
      
      
  }   
@@ -82,10 +75,10 @@ foreach($found_user as $attribute => $value){
     
 }  
 
-private function has_the_attribute($attribute){
+private function has_the_attribute($the_attribute){
     
  $object_properties = get_object_vars($this);   
- return array_key_exists($attribute, $object_properties);   
+ return array_key_exists($the_attribute, $object_properties);   
     
 } 
     
@@ -160,7 +153,7 @@ $sql .= " WHERE id= " . $database->escape_string($this->id);
      
 global $database;     
  
-$sql = "DELETE FROM ".static::$db_table." ";
+$sql = "DELETE FROM " .static::$db_table. " ";
 $sql .= " WHERE id= " . $database->escape_string($this->id);     
 $sql .= " LIMIT 1";     
      
