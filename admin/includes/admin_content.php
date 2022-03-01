@@ -10,6 +10,13 @@
                         
 <?php 
 
+                        
+//$user = User::find_by_id(34); 
+//echo $user->username;
+                        
+//$photo = Photo::find_by_id(8); 
+//echo $photo->filename;                        
+//                        
 //$user = new User();
 //$user->username = "student";
 //$user->password = "123";
@@ -64,7 +71,6 @@
 //$photo->create();                        
 //                                          
     
-echo INCLUDES_PATH;
 
 ?>
                         

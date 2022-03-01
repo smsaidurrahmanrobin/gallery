@@ -6,8 +6,8 @@ class Photo extends Db_object {
 
 
 	protected static $db_table = "photos";
-	protected static $db_table_fields = array('photo_id', 'title','description','filename','type','size' );
-	public $photo_id;
+	protected static $db_table_fields = array('id', 'title','description','filename','type','size' );
+	public $id;
 	public $title;
 	public $caption;
 	public $description;
@@ -19,6 +19,7 @@ class Photo extends Db_object {
 	public $tmp_path;
 	public $upload_directory = "images";
 	public $errors = array();
+    
 	public $upload_errors_array = array(
 
 
@@ -75,7 +76,7 @@ class Photo extends Db_object {
 
 	public function save() {
 
-		if($this->photo_id) {
+		if($this->id) {
 
 			$this->update();
 			
@@ -91,9 +92,10 @@ class Photo extends Db_object {
 				$this->errors[] = "the file was not available";
 				return false;
 			}
-
-			$target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->filename;
-
+            
+           $destination_path = getcwd();
+			$target_path = $destination_path . DS . $this->upload_directory . DS . $this->filename;
+           
 
 			if(file_exists($target_path)) {
 				$this->errors[] = "The file {$this->filename} already exists";
@@ -117,6 +119,7 @@ class Photo extends Db_object {
 			} else {
 
 				$this->errors[] = "the file directory probably does not have permission";
+                
 				return false;
 
 			}
@@ -134,8 +137,9 @@ class Photo extends Db_object {
 
 
 		if($this->delete()) {
-
-			$target_path = SITE_ROOT.DS. 'admin' . DS . $this->picture_path();
+            
+            $destination_path = getcwd();
+			$target_path = $destination_path . DS . $this->picture_path();
 
 			return unlink($target_path) ? true : false;
 
@@ -163,10 +167,10 @@ class Photo extends Db_object {
 	}
 
 
-	public static function display_sidebar_data($photo_id) {
+	public static function display_sidebar_data($id) {
 
 
-		$photo = Photo::find_by_id($photo_id);
+		$photo = Photo::find_by_id($id);
 
 
 		$output = "<a class='thumbnail' href='#'><img width='100' src='{$photo->picture_path()}' ></a> ";
