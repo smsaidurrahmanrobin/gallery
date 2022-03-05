@@ -5,6 +5,7 @@ class Session {
     
     private $signed_in = false;
     public $user_id;
+    public $username;
     public $message;
     public $count;
     
@@ -93,6 +94,7 @@ class Session {
             
             $this->user_id = $_SESSION['user_id'] = $user->id;
             $this->signed_in = true;
+         
         }
         
         
@@ -137,6 +139,7 @@ class Session {
 }
 
 $session = new Session();
+$message = $session->message();
 
 
 

@@ -21,7 +21,9 @@ public function open_db_connection(){
         
         die("Database connection failed badly" . mysqli_error());
         } 
-     
+    
+    
+        
     }  
     
     

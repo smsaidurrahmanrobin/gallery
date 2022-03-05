@@ -18,7 +18,11 @@ if($user){
  $user->password = $_POST['password'];   
    
  $user->set_file($_FILES['user_image']);   
- $user->save_user_and_image();
+ $user->save();
+ $user->upload_photo();
+$session->message("The user {$user->username} has been added");
+redirect("users.php");
+    
 }    
 }
     

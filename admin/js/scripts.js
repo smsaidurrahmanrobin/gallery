@@ -62,10 +62,10 @@ $("#set_user_image").click(function(){
 
 			if(!data.error) {
 
-				$(".user_image_box a img").prop('src', data);
+                $(".user_image_box a img").prop('src', data);
+               
 
-
-				// location.reload(true);
+				location.reload(true);
 
 			}
 
